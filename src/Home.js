@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./Bloglist";
 
 const Home = () => {
 
@@ -7,7 +8,7 @@ const Home = () => {
     {title: "my website2", body: "lorem ipsum...", author: "Julia", id: 2 },
     {title: "my website3", body: "lorem ipsum...", author: "Leo", id: 3 }])
 
-  const [name, setName] = useState("mario");
+  const [title, setTitle] = useState("button tests");
 
   const handleClick = event => {
     console.log("hello", event);
@@ -17,23 +18,19 @@ const Home = () => {
   }
 
   const modifyValueOnClick = () => {
-    setName("thom");
+    setTitle("BUTTON TESTS");
   }
 
   return (
     <div className="home">
-      <h2>Home</h2>
-      <p> Hello {name} </p>
+      <h2> {title} </h2>
       <button onClick={handleClick}>Click me</button>
       <button onClick={(e) => handleClickAgain("john", e)}>Click me again</button>
-      <button onClick={modifyValueOnClick}>Modify the name</button>
+      <button onClick={modifyValueOnClick}>Upcase title</button>
+
       <div className="homeList">
-        {blogs.map((blog) => (
-          <div className="blog-preview" key={blog.id}>
-            <h2>{blog.title}</h2>
-            <p> Written by {blog.author}</p>
-          </div>
-        ))}
+        <BlogList blogs={blogs} title="All blogs"/>
+        <BlogList blogs={blogs.filter((blog) => blog.author === "Julia")} title="Julia's blog"/>
       </div>
     </div>
   );
