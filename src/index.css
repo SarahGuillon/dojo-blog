@@ -51,3 +51,12 @@
   margin-bottom: 8px;
 }
 
+
+button {
+  padding: 5px;
+  margin: 20px;
+  background-color: #f1356d;
+  color: white;
+  border-radius: 5px;
+  border-color: #f1356d;;
+}
