@@ -3,17 +3,8 @@ import BlogList from "./Bloglist";
 
 const Home = () => {
 
-  // useEffect test
-  useEffect(() => {
-    console.log("use effect ran")
-    console.log(blogs);
-  },[]);
-
-  // useState test
-  const [blogs, setBlogs] = useState([
-    {title: "my website1", body: "lorem ipsum...", author: "Helen", id: 1 },
-    {title: "my website2", body: "lorem ipsum...", author: "Julia", id: 2 },
-    {title: "my website3", body: "lorem ipsum...", author: "Leo", id: 3 }])
+  // useState test (initial value of blogs => null & we will update it later with fetch)
+  const [blogs, setBlogs] = useState(null);
 
   const [title, setTitle] = useState("button tests");
 
@@ -36,6 +27,17 @@ const Home = () => {
     setBlogs(newBlogs);
   }
 
+    // useEffect test
+    useEffect(() => {
+      console.log("use effect ran")
+      fetch('http://localhost:8000/blogs')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setBlogs(data);
+      })
+    },[]);
+
     // Datas displayed on homepage using functions & props
   return (
     <div className="home">
@@ -45,8 +47,8 @@ const Home = () => {
       <button onClick={modifyValueOnClick}>Upcase title</button>
 
       <div className="homeList">
-        <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete}/>
-        <BlogList blogs={blogs.filter((blog) => blog.author === "Julia")} title="Julia's blog"/>
+        {blogs && <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete}/>}
+        {blogs && <BlogList blogs={blogs.filter((blog) => blog.author === "Lucie")} title="Lucie's blog"/>}
       </div>
     </div>
   );
