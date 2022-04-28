@@ -2,6 +2,7 @@ const BlogList = (props) => {
   const blogs = props.blogs;
   const title = props.title;
   const handleDelete = props.handleDelete;
+  
 
   return (
     <div className="blog-list">
