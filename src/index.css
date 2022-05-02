@@ -41,6 +41,10 @@
   border-bottom: 1px solid #fafafa;
 }
 
+.blog-list a {
+  text-decoration: none;
+}
+
 .blog-preview:hover{
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
 }
@@ -59,4 +63,51 @@ button {
   color: white;
   border-radius: 5px;
   border-color: #f1356d;;
+}
+
+.blog-details div {
+  margin: 20px 0;
+}
+
+.blog-details p {
+  margin: 10  px 0;
+}
+
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create label {
+  display: block;
+  text-align: left;
+}
+
+.create h2 {
+  color: #f1356d;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.create button {
+  width: 100%;
+  background-color: #f1356d;
+  color: white;
+  margin: 10px auto;
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
 }
