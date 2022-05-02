@@ -13,12 +13,6 @@
       "id": 2
     },
     {
-      "title": "my third blog",
-      "body": "body of my third blog",
-      "author": "Simon",
-      "id": 3
-    },
-    {
       "title": "zz",
       "body": "sss",
       "author": "Mario",
@@ -83,24 +77,6 @@
       "body": "zffhdjsjs",
       "author": "Yoshi",
       "id": 14
-    },
-    {
-      "title": "fff",
-      "body": "sss",
-      "author": "Yoshi",
-      "id": 15
-    },
-    {
-      "title": "sss",
-      "body": "ffdsqq",
-      "author": "Mario",
-      "id": 16
-    },
-    {
-      "title": "zr",
-      "body": "fff",
-      "author": "Mario",
-      "id": 17
     }
   ]
 }
